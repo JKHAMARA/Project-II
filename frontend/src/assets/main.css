@@ -1,0 +1,110 @@
+.navbar {
+  top: 0;
+  position: sticky !important;
+  z-index: 2;
+}
+.hero-image {
+  height: 540px;
+}
+
+.service-card svg {
+  height: 5rem;
+  width: 5rem;
+  color: #897f6b;
+  margin: auto;
+  padding-top: 1rem;
+}
+.featured-rooms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.featured-rooms > div,
+.room-list > div {
+  width: 23%;
+  margin: 10px;
+}
+.rooms-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.rooms-filter > div {
+  width: 18%;
+  margin: 10px;
+}
+.room-image {
+  height: 180px !important;
+}
+
+.carousel-caption {
+  top: 50%;
+  font-weight: bold;
+}
+
+.cover-component {
+  background: url(https://www.w3schools.com/w3css/img_lights.jpg);
+}
+.cover-component .img-fluid {
+  width: 100% !important;
+  height: 640px !important;
+}
+
+.loading-component {
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-title,
+.nav-item {
+  color: midnightblue !important;
+}
+.dashboard-input {
+  width: 50% !important;
+  display: block;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.dashboard-input:focus {
+  width: 100% !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none;
+  border-bottom-color: #ced4da !important;
+  border-radius: 0%;
+  outline: none !important;
+  font-size: 1.50rem;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 576px) {
+  .jumbotron {
+    padding: 10rem 2rem !important;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .featured-rooms > div,
+  .room-list > div,
+  .rooms-filter > div {
+    width: 100%;
+  }
+}
