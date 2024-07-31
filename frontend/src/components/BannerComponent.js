@@ -18,10 +18,7 @@ export default function BannerComponent({ room }) {
           calling extra attention to featured content or information.
         </p> */}
         <hr className="my-4" />
-        {/* <p>
-          It uses utility classNamees for typography and spacing to space
-          content out within the larger container.
-        </p> */}
+        
         {room.is_booked ? (
           <p className="lead btn btn-danger btn-lg">Reserved</p>
         ) : (

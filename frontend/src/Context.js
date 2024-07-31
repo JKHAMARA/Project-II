@@ -23,7 +23,7 @@ class Context extends Component {
       loading: true,
       category_name: "all",
       capacity: "1",
-      price_per_night: 0,
+      price: 0,
       maxPrice: 0,
       minPrice: 0,
       maxRoomSize: 0,
@@ -38,10 +38,10 @@ class Context extends Component {
       .then((response) => {
         let featured = response.data.filter((room) => room.featured);
         let minPrice = parseInt(
-          Math.min(...getUniqueValues(response.data, "price_per_night"))
+          Math.min(...getUniqueValues(response.data, "price"))
         );
         let maxPrice = parseInt(
-          Math.max(...getUniqueValues(response.data, "price_per_night"))
+          Math.max(...getUniqueValues(response.data, "price"))
         );
         let maxRoomSize = parseInt(
           Math.max(...getUniqueValues(response.data, "room_size"))
@@ -71,7 +71,7 @@ class Context extends Component {
           rooms: response.data,
           sortedRooms: response.data,
           featuredRooms: featured,
-          price_per_night: maxPrice,
+          price: maxPrice,
           minPrice: minPrice,
           maxPrice: maxPrice,
           maxRoomSize: maxRoomSize,
@@ -109,7 +109,7 @@ class Context extends Component {
       rooms,
       category_name,
       capacity,
-      price_per_night,
+      price,
       minRoomSize,
       maxRoomSize,
       reserved,
@@ -127,7 +127,7 @@ class Context extends Component {
     }
 
     filtredRooms = filtredRooms.filter(
-      (room) => room.price_per_night <= parseInt(price_per_night)
+      (room) => room.price <= parseInt(price)
     );
     filtredRooms = filtredRooms.filter(
       (room) =>

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 export default function Room({ room }) {
-    const {cover_image, title, price_per_night, room_slug} = room
+    const {cover_image, title, price, room_slug} = room
   return (
     <div className="card room">
       <Link to={`/single-room/${room_slug}`}>
@@ -9,7 +9,7 @@ export default function Room({ room }) {
       </Link>
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text font-weight-bold">LE {price_per_night}</p>
+        <p className="card-text font-weight-bold">LE {price}</p>
       </div>
     </div>
   );

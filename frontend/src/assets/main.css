@@ -64,9 +64,11 @@
   text-align: center;
 }
 
-.card-title,
-.nav-item {
+.card-title {
   color: midnightblue !important;
+}
+.nav-item {
+  color: white !important;
 }
 .dashboard-input {
   width: 50% !important;

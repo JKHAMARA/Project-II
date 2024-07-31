@@ -9,7 +9,7 @@ export default function SingleRommPage({ match }) {
     (room) => room.room_slug === match.params["room_slug"]
   );
   if (!room) {
-    return <div>Eroror</div>;
+    return <div>Error</div>;
   } else {
     return (
       <>
@@ -21,21 +21,17 @@ export default function SingleRommPage({ match }) {
             <div className="col-md-6 m-auto">
               <h6>Details</h6>
               <p className="text-justify" style={{ width: "80%" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {room.description}
               </p>
             </div>
-            <div className="col-md-6 m-auto">
+            <div className="col-md-6 mb-5">
               <h6>Information</h6>
-              <p>Price LE{room.price_per_night}</p>
-              <p>Size {room.room_size} Sqr Feet</p>
-              <p>Capacity Maxium {room.capacity} People</p>
-              <p>Meals Included</p>
+              <p>Price LE {room.price}</p>
+              {/* <p>Size {room.room_size} Sqr Feet</p> */}
+              <p>Maximum capacity: {room.capacity} People</p>
+              <p>Transportation Included</p>
+              <h6>Payment Detail</h6>
+              <p>Orange Money: +232 75754243</p>
             </div>
           </div>
         </div>

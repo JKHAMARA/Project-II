@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-TYPE = (
-    ('A', 'Air Conditioned'),
-    ('NA', 'Non Air Conditioned')
-)
+# TYPE = (
+#     ('A', 'Air Conditioned'),
+#     ('NA', 'Non Air Conditioned')
+# )
 
 
 def room_images_upload_path(instance, file_name):
@@ -18,11 +18,12 @@ def room_display_images_upload_path(instance, file_name):
 class Room(models.Model):
     title = models.CharField(max_length=30)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    price_per_night = models.DecimalField(max_digits=8, decimal_places=3)
+    price = models.DecimalField(max_digits=8, decimal_places=3)
     room_slug = models.SlugField()
     is_booked = models.BooleanField(default=False)
     capacity = models.IntegerField()
     room_size = models.CharField(max_length=5)
+    description = models.TextField(null=True, blank=True)
     cover_image = models.ImageField(upload_to=room_images_upload_path)
     featured = models.BooleanField(default=False)
 
@@ -57,11 +58,11 @@ class Booking(models.Model):
         return self.customer.username
 
 
-class Payment(models.Model):
-    customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
+# class Payment(models.Model):
+#     customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.customer
+#     def __str__(self):
+#         return self.customer
 
 
 class CheckIn(models.Model):

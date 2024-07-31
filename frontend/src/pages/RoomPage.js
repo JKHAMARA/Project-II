@@ -19,9 +19,9 @@ export default function RoomPage() {
   return (
     <>
       <div className="container">
-        <Title title="Filter Rooms" />
+        <Title title="Filter Services" />
         <RoomsFilter />
-        <Title title="Rooms" />
+        <Title title="Services" />
         <div className="room-list">
           {sortedRooms.length === 0 ? (
             <h3> No service found </h3>
@@ -29,7 +29,6 @@ export default function RoomPage() {
             <RoomList rooms={sortedRooms} />
           )}
         </div>
-        {/* <Pagination totalNumberofRooms={sortedRooms.length} roomsPerPage={roomsPerpage} paginate={paginate} /> */}
       </div>
     </>
   );

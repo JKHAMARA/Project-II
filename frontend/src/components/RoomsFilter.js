@@ -12,7 +12,7 @@ export default function RoomsFilter() {
     category_name,
     handleChange,
     capacity,
-    price_per_night,
+    price,
     maxPrice,
     minPrice,
     // minRoomSize,
@@ -62,11 +62,11 @@ export default function RoomsFilter() {
         </div>
         <div className="form-group">
           <label htmlFor="customRange3">
-            Service Cost Max LE{price_per_night}
+            Service Cost Max LE{price}
           </label>
           <input
-            name="price_per_night"
-            value={price_per_night}
+            name="price"
+            value={price}
             type="range"
             className="custom-range pt-2"
             min={minPrice}

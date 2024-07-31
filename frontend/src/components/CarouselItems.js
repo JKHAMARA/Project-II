@@ -18,7 +18,7 @@ export default function CarouselItems({ data }) {
         >
           <h5>{d.title}</h5>
         </Link>
-        <p>LE {d.price_per_night}</p>
+        <p>LE {d.price}</p>
       </div>
     </div>
   ));

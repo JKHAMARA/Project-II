@@ -43,13 +43,13 @@ class BookingCreateApiView(CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         response['data'] = serializer.data
-        response['response'] = "Room is successfully booked"
+        response['response'] = "Service is successfully booked"
         return Response(response, status=status.HTTP_201_CREATED, headers=headers)
 
     def post(self, request, *args, **kwargs):
         room = get_object_or_404(Room, pk=request.data['room'])
         if room.is_booked:
-            return Response({"response": "Room is already booked"}, status=status.HTTP_200_OK)
+            return Response({"response": "Service is already booked"}, status=status.HTTP_200_OK)
         room.is_booked = True
         room.save()
         checked_in_room = CheckIn.objects.create(
